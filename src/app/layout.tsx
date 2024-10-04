@@ -6,6 +6,8 @@ import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import ProviderSessionAuth from "./ProviderSession";
+import { Providers } from "@/redux/provider";
+
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "400", "700", "900"], });
 
@@ -42,7 +44,9 @@ export default async function RootLayout({
         <StyledComponentsRegistry>
           <NextIntlClientProvider messages={messages}>
             <ProviderSessionAuth>
+              <Providers>
               {children}
+              </Providers>
             </ProviderSessionAuth>
           </NextIntlClientProvider>
         </StyledComponentsRegistry>
