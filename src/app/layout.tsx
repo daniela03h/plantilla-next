@@ -5,6 +5,7 @@ import { Roboto } from "next/font/google";
 import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import ProviderSessionAuth from "./ProviderSession";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "400", "700", "900"], });
 
@@ -31,7 +32,7 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale()
   const messages = await getMessages()
-  
+
   return (
     <html lang={locale}>
       <body
@@ -40,7 +41,9 @@ export default async function RootLayout({
       >
         <StyledComponentsRegistry>
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <ProviderSessionAuth>
+              {children}
+            </ProviderSessionAuth>
           </NextIntlClientProvider>
         </StyledComponentsRegistry>
       </body>
