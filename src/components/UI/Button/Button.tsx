@@ -1,6 +1,6 @@
 "use client"
 
-import { IButton } from "@/app/types/IButton";
+import { IButton } from "../../../types/IButton";
 import { ButtonStyle } from "./Button-style";
 
 const Button: React.FC<IButton> = ({ children, onClick }) => {

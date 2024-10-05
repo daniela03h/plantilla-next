@@ -1,7 +1,7 @@
 "use client"
 
-import Input from "./components/UI/Input/Input";
-import Button from "./components/UI/Button/Button";
+import Input from "../components/UI/Input/Input";
+import Button from "../components/UI/Button/Button";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { increment } from "@/redux/feactures/counterSlice";
 

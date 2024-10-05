@@ -1,6 +1,6 @@
 import React from "react";
 import { InputContainer, Label, InputStyled, InputWrapper } from "./Input-style";
-import { IInput } from "@/app/types/IInput";
+import { IInput } from "../../../types/IInput";
 
 
 const Input: React.FC<IInput> = ({ label, type, placeholder, required, id, value, onChange, name, key, maxLength }) => {
